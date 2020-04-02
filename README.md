@@ -7,6 +7,14 @@ MultiSeg consists on a specialized segmentation technique devised for SAR (Synth
 Created in the C++ language, with the support from the open-source library [TerraLib](http://www.dpi.inpe.br/terralib5/wiki/doku.php).
 The devised software architecture permits easy extension of its capabilities.
 
+### Repository Structure
+
+* `mseg` algorithm core. Build as a dynamic library;
+* `mseg-examples` example how to use MultiSeg from C++ code;
+* `mseg-idl` MultiSeg for IDL applications. *i.e.* a command-line tool of MultiSeg;
+* `mseg-op` MultiSeg Operator for [InterIMAGE](http://www.lvc.ele.puc-rio.br/projects/interimage/pt-br/) application;
+* `mseg-ui` MultiSeg user-interface using Qt.
+
 ### Methodology
 
 The algorithm integrates several segmentation strategies, which iteratively process data structured as an image pyramid.
@@ -26,7 +34,7 @@ The algorithm integrates several segmentation strategies, which iteratively proc
 Code design was oriented towards a modular and extendable architecture, which can easily accommodate new mechanisms in the segmentation process, or improvements of the current ones.
 
 Possibility of seamlessly incorporating new rules and tests for the segmentation process, without the need for modifications of the structural, generic, classes that compose the architecture of MultiSeg. Therefore, in order to extend the code in that
-sense, it suffices to create new classes that implement the **mseg/src/AbstractMerger interface**.
+sense, it suffices to create new classes that implement the `mseg/src/AbstractMerger` interface.
 
 ```cpp
 virtual bool predicate(Region* r1, Region* r2, const std::size_t& band) const = 0;
