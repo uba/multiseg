@@ -9,15 +9,43 @@ The devised software architecture permits easy extension of its capabilities.
 
 ### Methodology
 
+The algorithm integrates several segmentation strategies, which iteratively process data structured as an image pyramid.
+
 ![](images/methodology.png)
 |:--:|
 | Processing Chain |
 
+ Figure illustrates the segmentation process at different compression levels.
+ 
 ![](images/methodology-example.png)
 |:--:| 
 | (a) Synthetic radar image and (b)-(f) final segments computed for each level,<br/>superimposed with the respective compressed image. |
 
+### Architecture
+
+Code design was oriented towards a modular and extendable architecture, which can easily accommodate new mechanisms in the segmentation process, or improvements of the current ones.
+
+Possibility of seamlessly incorporating new rules and tests for the segmentation process, without the need for modifications of the structural, generic, classes that compose the architecture of MultiSeg. Therefore, in order to extend the code in that
+sense, it suffices to create new classes that implement the **AbstractMerger interface**.
+
+```cpp
+virtual bool predicate(Region* r1, Region* r2, const std::size_t& band) const = 0;
+virtual double getDissimilarity(const std::vector<double>& p, Region* r, const std::size_t& band) const = 0;
+virtual bool isHomogenous(Region* r, const std::size_t& band) const = 0;
+virtual void merge(Region* r1, Region* r2) const = 0;
+```
+
 ### Results
+
+We will show a few examples of segmentation results obtained with MultiSeg over SAR data, and the effect of varying the user defined parameters, which are described below:
+* *N*: number of compression levels.
+* *simil*: similarity threshold (dB) for decision on region growing/merging.
+* *conf*: confidence level (%) for decision on region growing/merging and homogeneity hypotheses tests.
+* *nel*: number of equivalent looks of original image.
+* *mas*: minimum area size (pixels) of final regions.
+
+Although MultiSeg is able to process multiband images, in order to make it easier for the reader to analyze the segmentation results, the examples presented below show the results of the segmentation of a single image band (polarization).
+
 ![](images/radarsat.png)
 |:--:| 
 | Original RADARSAT image (VH polarization). |
@@ -25,6 +53,14 @@ The devised software architecture permits easy extension of its capabilities.
 ![](images/radarsat-result.png)
 |:--:| 
 | MultiSeg segmentation of the RADARSAT image:<br/>(a) N=6; simil=1.0; conf=0.95; nel=1.0; mas=20 and (b) N=6; simil=1.0; conf=0.995; nel=1.0; mas=20. |
+
+![](images/alos-palsar.png)
+|:--:| 
+| Original ALOS/PALSAR image (HH polarization). |
+
+![](images/alos-palsar-result.png)
+|:--:|
+| MultiSeg segmentation of the ALOS/PALSAR image:<br/>(a) N=3; simil=1.0; conf=0.95; nel=3.0; mas=20 and (b) N=4; simil=1.0; conf=0.95; nel=3.0; mas=20. | 
 
 ### References
 
