@@ -8,14 +8,23 @@ Created in the C++ language, with the support from the open-source library [Terr
 The devised software architecture permits easy extension of its capabilities.
 
 ### Methodology
+
 ![](images/methodology.png)
-|:--:| 
+|:--:|
 | Processing Chain |
 
 ![](images/methodology-example.png)
 |:--:| 
-| (a) Synthetic radar image. (b)-(f) Final segments computed for each level,
-superimposed with the respective compressed image. |
+| (a) Synthetic radar image and (b)-(f) final segments computed for each level,<br/>superimposed with the respective compressed image. |
+
+### Results
+![](images/radarsat.png)
+|:--:| 
+| Original RADARSAT image (VH polarization). |
+
+![](images/radarsat-result.png)
+|:--:| 
+| MultiSeg segmentation of the RADARSAT image:<br/>(a) N=6; simil=1.0; conf=0.95; nel=1.0; mas=20 and (b) N=6; simil=1.0; conf=0.995; nel=1.0; mas=20. |
 
 ### References
 
