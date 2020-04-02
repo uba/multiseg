@@ -7,6 +7,10 @@ MultiSeg consists on a specialized segmentation technique devised for SAR (Synth
 Created in the C++ language, with the support from the open-source library [TerraLib](http://www.dpi.inpe.br/terralib5/wiki/doku.php).
 The devised software architecture permits easy extension of its capabilities.
 
+### Methodology
+
+![](images/methodology.png)
+
 ### References
 
 UBA, D. M.; DUTRA, L. V.; SOARES, M. D.; COSTA, G. A. O. P. Implementation of a hierarchical segmentation algorithm for radar and optical data using TerraLib. In: SIMPÓSIO BRASILEIRO DE SENSORIAMENTO REMOTO, 17. (SBSR), 2015, João Pessoa. Anais... São José dos Campos: INPE, 2015. p. 4041-4048. Internet. ISBN 978-85-17-0076-8. Available from: [Link](http://urlib.net/rep/8JMKD3MGP6W34M/3JM4CC8).
