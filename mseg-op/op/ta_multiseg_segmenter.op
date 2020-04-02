@@ -1,0 +1,33 @@
+<operator type=topdown
+          class=gis
+          name="MultiSeg Segmenter" 
+          cmd="mseg/mseg-op  \"@input_image@\"
+							 \"@geoWest@\"
+							 \"@geoNorth@\"
+							 \"@geoEast@\" 
+							 \"@geoSouth@\" 
+							 \"@mask_file@\"
+							 \"@tmpdir@\"
+							 \"@fuzzysets@\"
+							 \"@input_bands@\"
+							 \"@image_format@\"
+							 \"@levels@\"
+							 \"@similarity@\" 
+							 \"@enl@\" 
+							 \"@confidence_level@\"
+							 \"@area_min@\"
+							 \"@output@\" 
+							 \"@class@\" 
+							 \"@reliability@\" \"\" \"\" " runglobal=false >
+  
+  <attribute name=input_image type=imagefile label="a) Input Image">
+  <attribute name=image_format label="b) SAR Image Format" type=enum options="Amplitude,Intensity,dB">
+  <attribute name=input_bands label="c) Input Bands (comma separated)" type=string>
+  <attribute name=levels label="d) Levels" type=int value=0>
+  <attribute name=similarity label="e) Similarity Threshold (in dB)" type=double value=1.0>
+  <attribute name=enl label="f) Number of Looks (ENL)" type=int value=8>
+  <attribute name=confidence_level label="g) Confidence Level" type=double value=0.95>
+  <attribute name=area_min label="h) Regions Minimum Area (in pixels)" type=int value=20>
+  <attribute name=reliability label="i) Reliability" type=double value=0.2>
+    
+</operator>
