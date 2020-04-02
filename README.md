@@ -8,8 +8,14 @@ Created in the C++ language, with the support from the open-source library [Terr
 The devised software architecture permits easy extension of its capabilities.
 
 ### Methodology
-
 ![](images/methodology.png)
+|:--:| 
+| Processing Chain |
+
+![](images/methodology-example.png)
+|:--:| 
+| (a) Synthetic radar image. (b)-(f) Final segments computed for each level,
+superimposed with the respective compressed image. |
 
 ### References
 
