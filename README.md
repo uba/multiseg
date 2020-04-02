@@ -9,7 +9,10 @@ The devised software architecture permits easy extension of its capabilities.
 
 ### Methodology
 
+#### Processing Chain
 ![](images/methodology.png)
+#### Example
+![](images/methodology-example.png)
 
 ### References
 
