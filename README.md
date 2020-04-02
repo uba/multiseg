@@ -1,6 +1,6 @@
 ## MultiSeg - Hierarchical segmentation algorithm for radar and optical data
 
-## What is MultiSeg?
+### What is MultiSeg?
 
 MultiSeg consists on a specialized segmentation technique devised for SAR (Synthetic Aperture Radar) and optical imagery. Initially, images are compressed at different rates creating an image pyramid, then a region growing procedure is used in combination with a split and merge technique at the different compression levels. In sequence, the program processes the image pyramid from the coarser to the finer compression levels, applying a border refinement heuristic each time it changes from one level to the next.
 
