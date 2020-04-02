@@ -26,7 +26,7 @@ The algorithm integrates several segmentation strategies, which iteratively proc
 Code design was oriented towards a modular and extendable architecture, which can easily accommodate new mechanisms in the segmentation process, or improvements of the current ones.
 
 Possibility of seamlessly incorporating new rules and tests for the segmentation process, without the need for modifications of the structural, generic, classes that compose the architecture of MultiSeg. Therefore, in order to extend the code in that
-sense, it suffices to create new classes that implement the **AbstractMerger interface**.
+sense, it suffices to create new classes that implement the **mseg/src/AbstractMerger interface**.
 
 ```cpp
 virtual bool predicate(Region* r1, Region* r2, const std::size_t& band) const = 0;
